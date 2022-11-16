@@ -34,7 +34,7 @@ namespace SplineSys {
 			seg = default;
 			if (p1 == null || p2 == null) return false;
 
-			seg = Spline.From2Vector(p1.position, p2.position, p1.forward, p2.forward,
+			seg = Spline.From2Vector(p1.position, p1.forward, p2.position, p2.forward,
 				tension: tension, length: length);
 			return true;
 		}

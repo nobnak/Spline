@@ -9,7 +9,7 @@ namespace SplineSys {
 	public static class Spline {
 
 		public static Segment From2Vector(
-			float3 p1, float3 p2, float3 v1, float3 v2,
+			float3 p1, float3 v1, float3 p2, float3 v2,
 			float alpha = 0.5f, float tension = 0f, float length = 1f) {
 
 			float t12 = math.pow(math.distance(p1, p2), alpha);
