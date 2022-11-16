@@ -8,8 +8,24 @@ namespace SplineSys {
 
 	public static class Spline {
 
+		public static Segment From2Vector(
+			float3 p1, float3 p2, float3 v1, float3 v2,
+			float alpha = 0.5f, float tension = 0f, float length = 1f) {
+
+			float t12 = math.pow(math.distance(p1, p2), alpha);
+
+			float3 m1 = (1.0f - tension) * t12 * length * v1;
+			float3 m2 = (1.0f - tension) * t12 * length * v2;
+
+			var a = 2.0f * (p1 - p2) + m1 + m2;
+			var b = -3.0f * (p1 - p2) - m1 - m1 - m2;
+			var c = m1;
+			var d = p1;
+
+			return new Segment { a = a, b = b, c = c, d = d };
+		}
 		public static Segment From4Points(
-			float3 p0, float3 p1, float3 p2, float3 p3, 
+			float3 p0, float3 p1, float3 p2, float3 p3,
 			float alpha = 0.5f, float tension = 0f) {
 
 			float t01 = math.pow(math.distance(p0, p1), alpha);
@@ -26,7 +42,7 @@ namespace SplineSys {
 			var c = m1;
 			var d = p1;
 
-			return new Segment{ a = a, b = b, c = c, d = d };
+			return new Segment { a = a, b = b, c = c, d = d };
 		}
 
 		public struct Segment {
