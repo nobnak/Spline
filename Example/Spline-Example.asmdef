@@ -1,0 +1,19 @@
+{
+    "name": "Spline-Example",
+    "rootNamespace": "",
+    "references": [
+        "Spline",
+        "Unity.Mathematics",
+        "LLGraphicsUnity",
+        "Gist2"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
